@@ -1,0 +1,266 @@
+
+\documentclass{article}
+\usepackage[landscape]{geometry}
+\usepackage{url}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{esint}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathmorphing}
+\usepackage{amsmath,amssymb}
+\usepackage{bm}
+
+\usepackage{colortbl}
+\usepackage{xcolor}
+\usepackage{mathtools}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\makeatletter
+\usepackage{booktabs}
+\newcommand*\bigcdot{\mathpalette\bigcdot@{.5}}
+\newcommand*\bigcdot@[2]{\mathbin{\vcenter{\hbox{\scalebox{#2}{$\m@th#1\bullet$}}}}}
+\makeatother
+
+\title{130 Cheat Sheet}
+\usepackage[brazilian]{babel}
+\usepackage[utf8]{inputenc}
+
+\advance\topmargin-.8in
+\advance\textheight3in
+\advance\textwidth3in
+\advance\oddsidemargin-1.5in
+\advance\evensidemargin-1.5in
+\parindent0pt
+\parskip2pt
+\newcommand{\hr}{\centerline{\rule{3.5in}{1pt}}}
+%\colorbox[HTML]{e4e4e4}{\makebox[\textwidth-2\fboxsep][l]{texto}
+\begin{document}
+
+\begin{center}{\huge{\textbf{PH389 Exam Cheat Sheet}}}\\
+\end{center}
+\begin{multicols*}{3}
+
+\tikzstyle{mybox} = [draw=black, fill=white, very thick,
+    rectangle, rounded corners, inner sep=10pt, inner ysep=10pt]
+\tikzstyle{fancytitle} =[fill=black, text=white, font=\bfseries]
+
+%------------ Newtonian Mechanics ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.3\textwidth}
+    $\bm{F} = m \bm{a} = \dfrac{d \bm{p}}{dt}$ \\
+    Conservative forces \\
+    $\bm{F} = -\nabla V$
+    \end{minipage}
+};
+%------------ Newtonian Mechanics Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Newtonian Mechanics};
+\end{tikzpicture}
+
+%------------ Lagrangian Mechanics ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.3\textwidth}
+   $\mathcal{L} = T - V$\\
+   $\dfrac{\partial \mathcal{L}}{\partial x_{i}} - \dfrac{d}{dt}\dfrac{\partial \mathcal{L}}{\partial x'_{i}} = 0$ \\
+   $\dfrac{d}{dt}\dfrac{\partial \mathcal{L}}{\partial x'_{i}} = 0 \leftrightarrow $ \textcolor{red}{Conserved quantity} \\
+   Constraints must be \textcolor{red}{Holonomic}  \\
+   \underline{Free Particle Lagrangian's} \\
+   $\mathcal{L} = \frac{m}{2}(x'^2 + y'^2 + z'^2)$ \\
+    $\mathcal{L} = \frac{m}{2}(r'^2 + r\theta'^2 )$ \\
+    $\mathcal{L} = \frac{m}{2}(r'^2 + r\theta'^2 +z'^2)$ \\ 
+    $\mathcal{L} = \frac{m}{2}(r'^2 + r^2(\theta'^2 +\phi'^2 \sin^2\theta))$
+  
+    \end{minipage}
+};
+%------------ Lagrangian Mechanics Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Lagrangian Mechanics};
+\end{tikzpicture}
+
+%------------ Noether's Theorem ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.3\textwidth}
+    $\dfrac{d}{dt}\dfrac{\partial \mathcal{L}}{\partial x'_{i}} = 0 \leftrightarrow $ \textcolor{red}{Conserved quantity} \\
+    If symmetry is \textcolor{red}{continuous} it can be linearly expanded \\
+    $\Tilde{x}_i = x_i + \epsilon_i (x_j)$ \\
+    $I(t) = \sum \limits_{i} \dfrac{\partial \mathcal{L}}{\partial x'_{i}} \epsilon_i (x_j) \bigg\rvert_{t}$\\ \\
+    \begin{tabular}{@{}ll@{}}
+    \toprule
+    Symmetry         & Conserved Quantity \\ \midrule
+    Translation      & Linear Momentum    \\
+    Rotation         & Angular Momentum   \\
+    Time Translation & Energy             \\
+    QM phase         & Charge             \\ \bottomrule
+    \end{tabular}
+    \end{minipage}
+};
+%------------ Noether's Theorem Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Noether's Theorem};
+\end{tikzpicture}
+
+%------------ Hamiltonian Mechanics Content ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.3\textwidth}
+    For a closed system the Lagrangian has no \textcolor{red}{explicit} time dependence \\
+   $ \mathcal{H} = \sum\limits_{i} \dfrac{\partial \mathcal{L}}{\partial x'_{i}} x'_i - \mathcal{L} \quad$ 
+   $\mathcal{H} = T + V$ \\
+    \textcolor{red}{Canonical momentum conjugate to $x_i$}\\
+    $p_{x_i} = \dfrac{\partial \mathcal{L}}{\partial x'_i}$ $\quad \mathcal{H} = \sum\limits_{i} p_{x_i} x'_i - \mathcal{L}$ \\
+    \underline{Equations of motion} \\ \\
+    $\dfrac{d x_i}{dt} = \dfrac{\partial \mathcal{H}}{\partial p_{x_i}} \quad$ $\dfrac{d p_{x_i}}{dt} = -\dfrac{\partial \mathcal{H}}{\partial x_i}$
+    \end{minipage}
+};
+%------------ Hamiltonian Mechanics Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Hamiltonian Mechanics};
+\end{tikzpicture}
+%------------ Pendulum Dynamics ---------------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.3\textwidth}
+    $ T = \frac{m}{2}l\theta'^2 , \quad V = mgl(1-\cos\theta)$ \\
+    \underline{Equations of motion} \\
+    $\theta'' = -\frac{g}{l} \sin \theta$
+    or when $\theta <<1,\quad \theta'' = -\frac{g}{l}\theta$
+    \end{minipage}
+};
+%------------ Pendulum Dynamics Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Pendulum Dynamics};
+\end{tikzpicture}
+
+%------------ Mass on a spring ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.3\textwidth}
+    $T = \frac{m}{2}x'^2, \quad V = \frac{1}{2}kx^2$ \\
+      \underline{Equations of motion} \\
+      $ mx'' = -kx$
+    
+    \end{minipage}
+};
+%------------ Mass on a spring Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Mass on a spring};
+\end{tikzpicture}
+
+%------------ small angle approximations---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.3\textwidth}
+    $
+        \sin\theta \approx \theta$ \\
+        $\cos\theta \approx 1 - \dfrac{\theta^2}{2} \approx 1$ \\
+        $\tan\theta \approx \theta$
+    \\
+    \end{minipage}
+};
+%------------ Small angle approximation Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Small angle approximations};
+\end{tikzpicture}
+
+%------------ Legendre Transforms ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.3\textwidth}
+    $g(p) = px - f(x),$ where $p = f'(x)$
+    \end{minipage}
+};
+%------------ Legendre Transform ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Legendre Transform};
+\end{tikzpicture}
+
+%------------ Poisson Brackets Content ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.3\textwidth}
+    $\dfrac{df}{dt}=\sum\limits_{i} \dfrac{\partial f}{\partial x_i}\dfrac{\partial \mathcal{H}}{\partial p_{x_i}}
+    -\dfrac{\partial f}{\partial p_{x_i}}\dfrac{\partial \mathcal{H}}{\partial x_i} + \dfrac{\partial f}{\partial t} = \{f,\mathcal{H}\} + \dfrac{\partial f}{\partial t}$ \\
+    \underline{Useful identities} \\
+    $\{f,f\} = 0, \quad \{f,g\} = -\{g,f\}, \quad \{x_i,p_{x_j}\} = \delta_{ij}$ \\
+    $\dfrac{d x_i}{dt} = \{x_i,\mathcal{H}\}, \quad \dfrac{d p_{x_i}}{dt} = \{p_{x_i},\mathcal{H}\}$ \\ \\
+    If $\{f,\mathcal{H}\}$ and $f$ has no explicit time dependence: $f$ is conserved
+    \end{minipage}
+};
+%------------ Poisson Brackets Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Poisson Brackets};
+\end{tikzpicture}
+\
+%------------ Quantum Mechanics Content ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.3\textwidth}
+  \underline{Schrödringer Picture} \\
+  \(i \dfrac{d |\psi \rangle}{dt} = \hat{H}|\psi \rangle \Leftrightarrow |\psi(t) \rangle = e^{-i\hat{H}t} |\psi(0) \rangle \) \\
+  \underline{Heisenberg Picture} \\
+  \( \langle \hat{A}\rangle = \langle \psi(t)|\hat{A}| \psi(t)\rangle \Leftrightarrow \hat{A}(t) = e^{i\hat{H}t}\hat{A}(0)e^{-i\hat{H}t}  \)\\
+  \( \dfrac{d \hat{A}}{dt} = i[\hat{H},\hat{A}] \) \\
+  \underline{Ehrenfest's Theorem} \\
+  \( [\hat{f},\hat{g}] \leftrightarrow i\hbar\{f,g\}, \quad \langle \hat{A} \rangle \leftrightarrow A(x_i,p_{x_i})
+  \) \\
+  \underline{Weyl quantisation}\\
+  $x^2 p = \frac{1}{3}(\hat{x}^2\hat{p} +\hat{x}\hat{p}\hat{x} + \hat{p}\hat{x}^2)$
+    \end{minipage}
+};
+%------------ Quantum Mechanics Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Quantum Mechanics};
+\end{tikzpicture}
+
+%------------ Group Theory Content ---------------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.3\textwidth}
+1: \textcolor{red}{Closure}: For any pair of elements $X \circ Y$ must also be an element. \\
+2: \textcolor{red}{Associativity}: $X \circ (Y\circ Z) = (X \circ Y) \circ Z$\\
+3: \textcolor{red}{Identity}: There is an element $I$ such that $X \circ I = X$\\
+4: \textcolor{red}{Inverse}: Each element has an inverse, $X \circ X^{-1} = I $ 
+	\end{minipage}
+};
+%------------ Group Theory Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Group Theory};
+\end{tikzpicture}
+
+
+%------------ Fractals Content ---------------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.3\textwidth}
+    Fractal generated from shape with $a$ sides and adding a shape that are a fraction $\dfrac{1}{b}$ of original shape. Each side is replaced with $c$ sides. This iteration now has $d_n$ total sides.\\
+    Total length n=1: $ L_1 = \dfrac{d_1}{b}$ \\
+    Number of new shapes: $S_n = a \cdot c^{n-1}$ \\
+    Area new shape: $B_n = B_0 /(b\cdot b)^n$ \\
+    Perimeter: $P_n = a (\dfrac{c}{b})^n $ \\
+    Total Area: $A_n = B_0 + \sum\limits_{k=1}^{n} S_n B_n = \\ B_0( 1+ \dfrac{a}{c}\sum\limits_{k=1}^{n}(\dfrac{c}{b\cdot b})^k)$ \\
+    Geometric Sum: $\sum\limits_{k=1}^{n} r^k = \dfrac{r(1-r^n)}{1-r}$\\
+    Box Counting: $D = \dfrac{\ln{N}}{\ln{1/\epsilon}}$, where $N= c$, $\epsilon = 1/b$
+	\end{minipage}
+};
+%------------ Fractals Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Fractals};
+\end{tikzpicture}
+
+%------------ Maps and Chaos ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.3\textwidth}
+    Fixed points: $x_{n+1} = x_{n}$ \\
+    Stability check: $x_n = x_n + \delta_x \leftrightarrow \delta_{n+1} = Q(r)\delta_n$ \\
+    Stable if: $|Q(r)| < 1$ \\
+    \underline{Linear Stability analysis} \\
+    $\dfrac{dx}{dt} = F(x), \quad J(x) = \dfrac{\partial F}{\partial x}$, Sub in fixed points to $J$\\
+    $+$ve : Unstable, $-$ve: Stable \\
+    \underline{Lyapunov Exponent}\\
+    $|\delta\bm{x}(t)| \simeq e^{\lambda t}|\delta \bm{x}(0)|$ \\
+    \[\lambda = \lim_{t \to \infty} \lim_{|\delta \bm{x}(0)| \to 0} \dfrac{1}{t}\ln{\dfrac{|\delta\bm{x}(t)|}{|\delta \bm{x}(0)|}}\]\\ 
+    $\lambda>0$ Chaotic, $\lambda<0$ regular \\ \\
+    $E_n = e^{\lambda n}\epsilon, \quad n_{max} = \dfrac{1}{\lambda}\ln{\dfrac{E}{\epsilon}}$
+    
+    
+    \end{minipage}
+};
+%------------ Maps and Chaos Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Maps and Chaos};
+\end{tikzpicture}
+\end{multicols*}
+\end{document}
+
