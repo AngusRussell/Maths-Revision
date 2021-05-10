@@ -37,7 +37,7 @@
 %\colorbox[HTML]{e4e4e4}{\makebox[\textwidth-2\fboxsep][l]{texto}
 \begin{document}
 
-\begin{center}{\huge{\textbf{PH389 Exam Cheat Sheet}}}\\
+\begin{center}{\huge{\textbf{PH389 Exam Equation Sheet}}}\\
 \end{center}
 \begin{multicols*}{3}
 
@@ -131,18 +131,18 @@
 \end{tikzpicture}
 
 %------------ Mass on a spring ---------------
-\begin{tikzpicture}
-\node [mybox] (box){%
-    \begin{minipage}{0.3\textwidth}
-    $T = \frac{m}{2}x'^2, \quad V = \frac{1}{2}kx^2$ \\
-      \underline{Equations of motion} \\
-      $ mx'' = -kx$
+%\begin{tikzpicture}
+%\node [mybox] (box){%
+%    \begin{minipage}{0.3\textwidth}
+%    $T = \frac{m}{2}x'^2, \quad V = \frac{1}{2}kx^2$ \\
+%      \underline{Equations of motion} \\
+%      $ mx'' = -kx$
     
-    \end{minipage}
-};
+%    \end{minipage}
+%};
 %------------ Mass on a spring Header ---------------------
-\node[fancytitle, right=10pt] at (box.north west) {Mass on a spring};
-\end{tikzpicture}
+%\node[fancytitle, right=10pt] at (box.north west) {Mass on a spring};
+%\end{tikzpicture}
 
 %------------ small angle approximations---------------
 \begin{tikzpicture}
@@ -152,7 +152,6 @@
         \sin\theta \approx \theta$ \\
         $\cos\theta \approx 1 - \dfrac{\theta^2}{2} \approx 1$ \\
         $\tan\theta \approx \theta$
-    \\
     \end{minipage}
 };
 %------------ Small angle approximation Header ---------------------
@@ -178,8 +177,12 @@
     -\dfrac{\partial f}{\partial p_{x_i}}\dfrac{\partial \mathcal{H}}{\partial x_i} + \dfrac{\partial f}{\partial t} = \{f,\mathcal{H}\} + \dfrac{\partial f}{\partial t}$ \\
     \underline{Useful identities} \\
     $\{f,f\} = 0, \quad \{f,g\} = -\{g,f\}, \quad \{x_i,p_{x_j}\} = \delta_{ij}$ \\
-    $\dfrac{d x_i}{dt} = \{x_i,\mathcal{H}\}, \quad \dfrac{d p_{x_i}}{dt} = \{p_{x_i},\mathcal{H}\}$ \\ \\
-    If $\{f,\mathcal{H}\}$ and $f$ has no explicit time dependence: $f$ is conserved
+    $\dfrac{d x_i}{dt} = \{x_i,\mathcal{H}\}, \quad \dfrac{d p_{x_i}}{dt} = \{p_{x_i},\mathcal{H}\}$ \\ 
+	$\{af+bg,h\} = a\{f,h\} + b\{g,h\}$ \\
+	$\{fg,h\} = g\{f,h\} + f\{g,h\} $\\ \\
+	Jacobi: $\{\{A,B\},H\} + \{\{B,H\},A\} + \{\{H,A\},B\} = 0$\\\\
+	Leibniz: $\{\{A,B\}H\} =\{\{A,H\},B\} + \{A,\{B,H\}\} $ \\ \\
+    If $\{f,\mathcal{H}\}=0$ and $f$ has no explicit time dependence: $f$ is conserved
     \end{minipage}
 };
 %------------ Poisson Brackets Header ---------------------
@@ -199,7 +202,8 @@
   \( [\hat{f},\hat{g}] \leftrightarrow i\hbar\{f,g\}, \quad \langle \hat{A} \rangle \leftrightarrow A(x_i,p_{x_i})
   \) \\
   \underline{Weyl quantisation}\\
-  $x^2 p = \frac{1}{3}(\hat{x}^2\hat{p} +\hat{x}\hat{p}\hat{x} + \hat{p}\hat{x}^2)$
+  $x^2 p = \frac{1}{3}(\hat{x}^2\hat{p} +\hat{x}\hat{p}\hat{x} + \hat{p}\hat{x}^2)$\\
+	If $[\hat{A},\hat{H}]=0$ and $\hat{A}$ has no explicit time dependence: $\langle\hat{A}\rangle$ is conserved
     \end{minipage}
 };
 %------------ Quantum Mechanics Header ---------------------
